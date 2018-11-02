@@ -1,6 +1,5 @@
 package com.sit.cloudnative.MaterialService.Material;
 
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +24,7 @@ public class MaterialService {
     }
 
     public Material getMaterialById(Long materialId) {
-        return materialRepository.findById(materialId)
-                .orElseThrow(() -> new ResourceNotFoundException("Material", "id", materialId));
+        return materialRepository.getOne(materialId);
     }
 
 }
